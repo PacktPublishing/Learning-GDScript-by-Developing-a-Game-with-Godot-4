@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1pysshjlneof"]
+
+[ext_resource type="Script" path="res://parts/player/player.gd" id="1_8ab1t"]
+[ext_resource type="Texture2D" uid="uid://bb36r4crpguyv" path="res://assets/sprites/character/character01.png" id="2_fygp7"]
+[ext_resource type="Script" path="res://parts/camera/camera_position.gd" id="3_e53f3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5xo7"]
+radius = 21.0
+height = 48.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_f4wmn"]
+properties/0/path = NodePath(".:health")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/sync = true
+properties/1/watch = false
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+script = ExtResource("1_8ab1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_fygp7")
+
+[node name="Health" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -49.0
+offset_right = 23.0
+offset_bottom = -23.0
+text = "10/10"
+horizontal_alignment = 1
+
+[node name="CameraPosition" type="Node2D" parent="."]
+script = ExtResource("3_e53f3")
+position_interpolation_speed = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="CameraPosition"]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_p5xo7")
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_f4wmn")
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

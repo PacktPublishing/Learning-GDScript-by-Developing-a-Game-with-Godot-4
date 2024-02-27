@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://ck2g1dbq0ftuw"]
+
+[ext_resource type="PackedScene" uid="uid://c3npgprfx7dy3" path="res://parts/environment/wall.tscn" id="1_73ib7"]
+[ext_resource type="Script" path="res://screens/game/main.gd" id="1_sfxjc"]
+[ext_resource type="PackedScene" uid="uid://clviqda8a1cvm" path="res://parts/environment/boulder02.tscn" id="2_csnvk"]
+[ext_resource type="PackedScene" uid="uid://bqbuyddr8dux6" path="res://parts/environment/boulder01.tscn" id="3_g2ffr"]
+[ext_resource type="PackedScene" uid="uid://d1pysshjlneof" path="res://parts/player/player.tscn" id="4_njsao"]
+[ext_resource type="PackedScene" uid="uid://bce2tgdywe81f" path="res://parts/collectible/health_potion.tscn" id="5_stjyl"]
+[ext_resource type="PackedScene" uid="uid://8el6tatppm3b" path="res://parts/entity_spawner/entity_spawner.tscn" id="6_m5tam"]
+[ext_resource type="PackedScene" uid="uid://fi3mjcqh4sgj" path="res://parts/enemy/enemy.tscn" id="7_fdnlt"]
+[ext_resource type="PackedScene" uid="uid://5x7umxfncme7" path="res://parts/game_over_menu/game_over_menu.tscn" id="8_tamld"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bwyr8"]
+vertices = PackedVector2Array(877, 239, 1056, 361, 955, 386, 214, 372, 739, 246, 1464, 928, 1114, 1043, 960, 1007, 1053, 925, 1325, 781, 1600, 685, 1287, -65, 1378, -223, 1610, -6, 1284, 78, 727, -156, 677, -234, 730, -72, 707, -81, 1323, 617, 1094, 448, 1037, 840, 751, 780, 967, 831, 892, 851, 365, 954, 408, 879, 507, 756, 174, 1000, 879, 95, 404, 231, 539, 228, 192, 257, 538, -87, 626, -89, -200, -199, 598, -183, -26, -79, -31, 84, 404, 76, 78, 267, -352, 261, 509, 473, 746, 468, 347, 791, -29, 770, 253, 838, 375, 473, 369, 624, -24, 626, 55, 397, 963, 473, 904, 468, 1030, 517, 910, 617, 580, -268, -216, 923, 289, 939)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(12, 11, 15, 16), PackedInt32Array(15, 11, 17, 18), PackedInt32Array(13, 10, 19, 20, 1, 14), PackedInt32Array(10, 9, 19), PackedInt32Array(9, 8, 21), PackedInt32Array(22, 9, 21, 23), PackedInt32Array(22, 23, 24, 25, 26, 27), PackedInt32Array(7, 6, 28), PackedInt32Array(24, 7, 28, 25), PackedInt32Array(29, 14, 1, 0), PackedInt32Array(30, 31, 4, 3, 32), PackedInt32Array(18, 17, 4, 31, 33, 34), PackedInt32Array(35, 36, 34, 33, 37), PackedInt32Array(38, 39, 30, 32, 40, 41), PackedInt32Array(42, 43, 22, 27), PackedInt32Array(27, 26, 44), PackedInt32Array(45, 27, 44), PackedInt32Array(45, 44, 46), PackedInt32Array(3, 47, 48, 49, 50), PackedInt32Array(3, 2, 51, 52), PackedInt32Array(53, 20, 19), PackedInt32Array(53, 19, 54), PackedInt32Array(53, 54, 52, 51), PackedInt32Array(3, 52, 43), PackedInt32Array(3, 43, 42, 47), PackedInt32Array(55, 12, 16), PackedInt32Array(55, 16, 36, 35), PackedInt32Array(41, 35, 37, 38), PackedInt32Array(56, 41, 40, 50, 49), PackedInt32Array(56, 49, 45), PackedInt32Array(28, 56, 45, 46, 57), PackedInt32Array(28, 57, 25)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-200, -199, 580, -268, 1378, -223, 1610, -6, 1600, 685, 1464, 928, 1114, 1043, 174, 1000, -216, 923, -352, 261), PackedVector2Array(730, -72, 1287, -65, 1284, 78, 879, 95, 877, 239, 739, 246), PackedVector2Array(-26, -79, 538, -87, 539, 228, 404, 231, 404, 76, -31, 84), PackedVector2Array(-24, 626, 369, 624, 375, 473, 509, 473, 507, 756, -29, 770), PackedVector2Array(746, 468, 904, 468, 910, 617, 1323, 617, 1325, 781, 751, 780), PackedVector2Array(78, 267, 192, 257, 214, 372, 55, 397), PackedVector2Array(955, 386, 1056, 361, 1094, 448, 1030, 517, 963, 473), PackedVector2Array(598, -183, 677, -234, 727, -156, 707, -81, 626, -89), PackedVector2Array(253, 838, 347, 791, 408, 879, 365, 954, 289, 939), PackedVector2Array(892, 851, 967, 831, 1037, 840, 1053, 925, 960, 1007)])
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_sfxjc")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Ground" type="ColorRect" parent="Environment"]
+offset_left = -441.0
+offset_top = -371.0
+offset_right = 1691.0
+offset_bottom = 1104.0
+color = Color(0.878431, 0.74902, 0.482353, 1)
+
+[node name="Wall" parent="Environment" instance=ExtResource("1_73ib7")]
+
+[node name="Wall2" parent="Environment" instance=ExtResource("1_73ib7")]
+position = Vector2(1303, 697)
+rotation = -3.14159
+
+[node name="Wall3" parent="Environment" instance=ExtResource("1_73ib7")]
+position = Vector2(-29, 692)
+rotation = -3.14159
+scale = Vector2(-1, 1)
+
+[node name="Wall4" parent="Environment" instance=ExtResource("1_73ib7")]
+position = Vector2(1281, 5)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Boulder" parent="Environment" instance=ExtResource("2_csnvk")]
+position = Vector2(136, 324)
+
+[node name="Boulder2" parent="Environment" instance=ExtResource("3_g2ffr")]
+position = Vector2(1018, 438)
+
+[node name="Boulder3" parent="Environment" instance=ExtResource("3_g2ffr")]
+position = Vector2(326, 871)
+
+[node name="Boulder4" parent="Environment" instance=ExtResource("3_g2ffr")]
+position = Vector2(661, -156)
+
+[node name="Boulder5" parent="Environment" instance=ExtResource("2_csnvk")]
+position = Vector2(973, 902)
+rotation = 1.19687
+
+[node name="OuterWalls" type="Polygon2D" parent="Environment"]
+position = Vector2(0, -1)
+color = Color(0.176471, 0.172549, 0.180392, 1)
+invert_enabled = true
+invert_border = 880.2
+polygon = PackedVector2Array(-207, -229, 589, -296, 1395, -254, 1637, -17, 1655, 701, 1491, 956, 1113, 1072, 178, 1029, -248, 956, -379, 276)
+
+[node name="Player" parent="." instance=ExtResource("4_njsao")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_bwyr8")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("6_m5tam")]
+entity_scene = ExtResource("7_fdnlt")
+
+[node name="Marker2D" type="Marker2D" parent="EnemySpawner/Positions" index="0"]
+position = Vector2(-189, 242)
+
+[node name="Marker2D2" type="Marker2D" parent="EnemySpawner/Positions" index="1"]
+position = Vector2(627, 379)
+
+[node name="Marker2D3" type="Marker2D" parent="EnemySpawner/Positions" index="2"]
+position = Vector2(648, 892)
+
+[node name="Marker2D4" type="Marker2D" parent="EnemySpawner/Positions" index="3"]
+position = Vector2(-93, 808)
+
+[node name="Marker2D5" type="Marker2D" parent="EnemySpawner/Positions" index="4"]
+position = Vector2(-64, 473)
+
+[node name="Marker2D6" type="Marker2D" parent="EnemySpawner/Positions" index="5"]
+position = Vector2(1151, 219)
+
+[node name="Marker2D7" type="Marker2D" parent="EnemySpawner/Positions" index="6"]
+position = Vector2(1398, 519)
+
+[node name="Marker2D8" type="Marker2D" parent="EnemySpawner/Positions" index="7"]
+position = Vector2(1270, 871)
+
+[node name="Marker2D9" type="Marker2D" parent="EnemySpawner/Positions" index="8"]
+position = Vector2(1429, 8)
+
+[node name="Marker2D10" type="Marker2D" parent="EnemySpawner/Positions" index="9"]
+position = Vector2(1020, -175)
+
+[node name="Marker2D11" type="Marker2D" parent="EnemySpawner/Positions" index="10"]
+position = Vector2(164, -163)
+
+[node name="Marker2D12" type="Marker2D" parent="EnemySpawner/Positions" index="11"]
+position = Vector2(635, -4)
+
+[node name="HealthPotionSpawner" parent="." instance=ExtResource("6_m5tam")]
+entity_scene = ExtResource("5_stjyl")
+spawn_interval = 20.0
+
+[node name="Marker2D" type="Marker2D" parent="HealthPotionSpawner/Positions" index="0"]
+position = Vector2(622, 360)
+
+[node name="Marker2D2" type="Marker2D" parent="HealthPotionSpawner/Positions" index="1"]
+position = Vector2(1412, 352)
+
+[node name="Marker2D3" type="Marker2D" parent="HealthPotionSpawner/Positions" index="2"]
+position = Vector2(-139, 387)
+
+[node name="Marker2D4" type="Marker2D" parent="HealthPotionSpawner/Positions" index="3"]
+position = Vector2(643, -243)
+
+[node name="Marker2D5" type="Marker2D" parent="HealthPotionSpawner/Positions" index="4"]
+position = Vector2(643, 779)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource("8_tamld")]
+visible = false
+
+[node name="TimerUI" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/TimerUI"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1232"
+horizontal_alignment = 1
+
+[connection signal="died" from="Player" to="." method="_on_player_died"]
+
+[editable path="EnemySpawner"]
+[editable path="HealthPotionSpawner"]

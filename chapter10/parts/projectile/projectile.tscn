@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2pvu0i16ni7n"]
+
+[ext_resource type="Script" path="res://parts/projectile/projectile.gd" id="1_m7mvs"]
+[ext_resource type="Texture2D" uid="uid://b53enicokee3b" path="res://assets/sprites/projectiles/arrow01.png" id="2_eqdt7"]
+
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kv6py"]
+radius = 9.0
+height = 32.0
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_m7mvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_eqdt7")
+
+[node name="EnemyDetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
+position = Vector2(-2, 0)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_kv6py")
+
+[connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]

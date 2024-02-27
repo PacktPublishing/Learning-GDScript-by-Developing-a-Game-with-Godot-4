@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3npgprfx7dy3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb6os"]
+size = Vector2(484, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ij7m"]
+size = Vector2(222.75, 65)
+
+[node name="Wall" type="Polygon2D"]
+color = Color(0.176471, 0.172549, 0.180392, 1)
+polygon = PackedVector2Array(22, -37, 504, -37, 506, 188, 444, 191, 440, 35, 19, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(261, -1.5)
+shape = SubResource("RectangleShape2D_gb6os")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(471, 77.625)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8ij7m")

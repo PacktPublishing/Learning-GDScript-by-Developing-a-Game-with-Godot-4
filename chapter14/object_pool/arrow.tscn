@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://tjc8n2oji3oy"]
+
+[ext_resource type="Texture2D" uid="uid://b53enicokee3b" path="res://assets/sprites/projectiles/arrow01.png" id="1_mvh07"]
+[ext_resource type="Script" path="res://object_pool/arrow.gd" id="2_okdtq"]
+
+[node name="Arrow" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_mvh07")
+script = ExtResource("2_okdtq")

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c3npgprfx7dy3"]
+
+[node name="Wall" type="Polygon2D"]
+color = Color(0.176471, 0.172549, 0.180392, 1)
+polygon = PackedVector2Array(22, -37, 504, -37, 506, 188, 444, 191, 440, 35, 19, 32)

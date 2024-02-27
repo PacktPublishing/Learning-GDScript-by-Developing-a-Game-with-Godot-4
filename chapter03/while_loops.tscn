@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwnnxmcjicwck"]
+
+[ext_resource type="Script" path="res://while_loops.gd" id="1_p7j4l"]
+
+[node name="WhileLoops" type="Node2D"]
+script = ExtResource("1_p7j4l")

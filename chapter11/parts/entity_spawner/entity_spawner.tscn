@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://8el6tatppm3b"]
+
+[ext_resource type="Script" path="res://parts/entity_spawner/entity_spawner.gd" id="1_vkru4"]
+
+[node name="EntitySpawner" type="Node2D"]
+script = ExtResource("1_vkru4")
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("..")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

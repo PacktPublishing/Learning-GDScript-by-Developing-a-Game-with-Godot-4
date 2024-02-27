@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5gy1ppw2yu1p"]
+
+[ext_resource type="Script" path="res://boolean_logic.gd" id="1_xnyhy"]
+
+[node name="BooleanLogic" type="Node2D"]
+script = ExtResource("1_xnyhy")

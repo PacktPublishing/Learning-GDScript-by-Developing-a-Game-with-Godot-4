@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsw51216et2x5"]
+
+[ext_resource type="Script" path="res://state_machine/state_machine.gd" id="1_1rp08"]
+[ext_resource type="Script" path="res://state_machine/state.gd" id="2_kao61"]
+
+[node name="Player" type="Node2D"]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_1rp08")
+
+[node name="Stand" type="Node" parent="StateMachine"]
+script = ExtResource("2_kao61")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("2_kao61")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("2_kao61")
+
+[node name="Shoot" type="Node" parent="StateMachine"]
+script = ExtResource("2_kao61")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwlmq3bb88ajf"]
+
+[ext_resource type="Script" path="res://event_bus/boss_fight.gd" id="1_ism4d"]
+
+[node name="BossFight" type="Node2D"]
+script = ExtResource("1_ism4d")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1pysshjlneof"]
+
+[ext_resource type="Script" path="res://tool_player.gd" id="1_iwfbj"]
+[ext_resource type="Texture2D" uid="uid://bb36r4crpguyv" path="res://assets/sprites/character/character01.png" id="2_jsvl6"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+script = ExtResource("1_iwfbj")
+health = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_jsvl6")
+
+[node name="Health" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -49.0
+offset_right = 23.0
+offset_bottom = -23.0
+text = "10/10"
+horizontal_alignment = 1

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlejoyvi21mkj"]
+
+[ext_resource type="Script" path="res://super_keyword.gd" id="1_1teae"]
+
+[node name="SuperKeyword" type="Node2D"]
+script = ExtResource("1_1teae")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://li8rta6jat7r"]
+
+[ext_resource type="Script" path="res://object_pool/bullet_hell.gd" id="1_5k0ex"]
+
+[node name="BulletHell" type="Node2D"]
+script = ExtResource("1_5k0ex")
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(573, 307)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

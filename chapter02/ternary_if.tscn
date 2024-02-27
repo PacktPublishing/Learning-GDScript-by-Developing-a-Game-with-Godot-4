@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfwbjarb2ggil"]
+
+[ext_resource type="Script" path="res://ternary_if.gd" id="1_pjwdr"]
+
+[node name="TernaryIf" type="Node2D"]
+script = ExtResource("1_pjwdr")
