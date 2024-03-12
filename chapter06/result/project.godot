@@ -10,7 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Survivor Game"
+config/name="Chapter 06 Result"
 config/description="Enter an interesting project description here!"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

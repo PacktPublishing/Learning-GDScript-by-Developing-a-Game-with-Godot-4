@@ -7,7 +7,7 @@ const MAX_HEALTH: int = 10
 @onready var _health_label: Label = $Health
 
 
-@export var health: int = 10:
+@export_range(0, MAX_HEALTH) var health: int = 10:
 	get:
 		return health
 	set(new_value):

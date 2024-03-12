@@ -78,7 +78,6 @@ script = ExtResource("1_q2icf")
 health = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("1_1dd50")
 

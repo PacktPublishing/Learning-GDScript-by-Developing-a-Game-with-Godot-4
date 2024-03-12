@@ -14,3 +14,5 @@ func _ready():
 	print("The number of lives is: ", number_of_lives)
 	
 #	FIRE_BALL_DAMAGE = 10
+	
+	print("%.20f" % (0.1 + 0.1)) 
