@@ -18,3 +18,4 @@ config/icon="res://icon.png"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.878431, 0.74902, 0.482353, 1)

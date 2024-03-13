@@ -3,69 +3,62 @@
 [ext_resource type="Texture2D" uid="uid://bb36r4crpguyv" path="res://assets/sprites/character/character01.png" id="1_1dd50"]
 [ext_resource type="Script" path="res://player.gd" id="1_q2icf"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 
-[node name="Environment" type="Node2D" parent="."]
+[node name="Arena" type="Node2D" parent="."]
 
-[node name="Ground" type="ColorRect" parent="Environment"]
-offset_left = -441.0
-offset_top = -371.0
-offset_right = 1691.0
-offset_bottom = 1104.0
-color = Color(0.878431, 0.74902, 0.482353, 1)
-
-[node name="Boulder" type="Polygon2D" parent="Environment"]
+[node name="Boulder" type="Polygon2D" parent="Arena"]
 position = Vector2(1190, 453)
 color = Color(0.313726, 0.309804, 0.317647, 1)
 polygon = PackedVector2Array(159, 13, 204, -5, 247, 31, 231, 58, 184, 58)
 
-[node name="Boulder2" type="Polygon2D" parent="Environment"]
+[node name="Boulder2" type="Polygon2D" parent="Arena"]
 position = Vector2(905, 147)
 color = Color(0.313726, 0.309804, 0.317647, 1)
 polygon = PackedVector2Array(164, 16, 214, -5, 247, 31, 233, 69, 184, 58)
 
-[node name="Boulder3" type="Polygon2D" parent="Environment"]
+[node name="Boulder3" type="Polygon2D" parent="Arena"]
 position = Vector2(143, 260)
 rotation = 1.25904
 color = Color(0.313726, 0.309804, 0.317647, 1)
 polygon = PackedVector2Array(167.877, 26.7837, 204, -5, 249.902, 6.98909, 231, 58, 184, 58)
 
-[node name="Boulder4" type="Polygon2D" parent="Environment"]
+[node name="Boulder4" type="Polygon2D" parent="Arena"]
 position = Vector2(1229, 437)
 rotation = 2.87226
 color = Color(0.313726, 0.309804, 0.317647, 1)
 polygon = PackedVector2Array(167.877, 26.7837, 195.526, -9.3089, 249.902, 6.98909, 248.533, 65.4922, 197.64, 73.2291)
 
-[node name="Boulder5" type="Polygon2D" parent="Environment"]
+[node name="Boulder5" type="Polygon2D" parent="Arena"]
 position = Vector2(39, 476)
 rotation = 4.04219
 color = Color(0.313726, 0.309804, 0.317647, 1)
 polygon = PackedVector2Array(167.877, 26.7837, 195.526, -9.3089, 249.902, 6.98909, 248.533, 65.4922, 197.64, 73.2291)
 
-[node name="Wall" type="Polygon2D" parent="Environment"]
+[node name="Wall" type="Polygon2D" parent="Arena"]
 color = Color(0.176471, 0.172549, 0.180392, 1)
 polygon = PackedVector2Array(22, -37, 504, -37, 506, 188, 444, 191, 440, 35, 19, 32)
 
-[node name="Wall2" type="Polygon2D" parent="Environment"]
+[node name="Wall2" type="Polygon2D" parent="Arena"]
 position = Vector2(1217, 7)
 rotation = -3.14159
 scale = Vector2(1, -1)
 color = Color(0.176471, 0.172549, 0.180392, 1)
 polygon = PackedVector2Array(22, -37, 504, -37, 506, 188, 444, 191, 440, 35, 19, 32)
 
-[node name="Wall3" type="Polygon2D" parent="Environment"]
+[node name="Wall3" type="Polygon2D" parent="Arena"]
 position = Vector2(-22, 717)
 scale = Vector2(1, -1)
 color = Color(0.1764, 0.1728, 0.18, 1)
 polygon = PackedVector2Array(22, -37, 504, -37, 506, 188, 444, 191, 440, 35, 19, 32)
 
-[node name="Wall4" type="Polygon2D" parent="Environment"]
+[node name="Wall4" type="Polygon2D" parent="Arena"]
 position = Vector2(1195, 724)
 rotation = -3.14159
 color = Color(0.1764, 0.1728, 0.18, 1)
 polygon = PackedVector2Array(22, -37, 504, -37, 506, 188, 444, 191, 440, 35, 19, 32)
 
-[node name="OuterWalls" type="Polygon2D" parent="Environment"]
+[node name="OuterWalls" type="Polygon2D" parent="Arena"]
 position = Vector2(0, -1)
 color = Color(0.176471, 0.172549, 0.180392, 1)
 invert_enabled = true
@@ -81,7 +74,7 @@ health = 7
 scale = Vector2(3, 3)
 texture = ExtResource("1_1dd50")
 
-[node name="Health" type="Label" parent="Player"]
+[node name="HealthLabel" type="Label" parent="Player"]
 offset_left = -20.0
 offset_top = -49.0
 offset_right = 23.0

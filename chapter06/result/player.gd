@@ -4,7 +4,7 @@ extends Node2D
 const MAX_HEALTH: int = 10
 
 
-@onready var _health_label: Label = $Health
+@onready var _health_label: Label = $HealthLabel
 
 
 @export_range(0, MAX_HEALTH) var health: int = 10:
