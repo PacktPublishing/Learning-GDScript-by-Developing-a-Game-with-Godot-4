@@ -15,8 +15,8 @@ const MAX_HEALTH: int = 10
 		update_health_label()
 
 @export var max_speed: float = 500.0
-@export var acceleration: float = 45
-@export var deceleration: float = 35
+@export var acceleration: float = 2500.0
+@export var deceleration: float = 1500.0
 
 
 func _ready():
@@ -38,8 +38,8 @@ func _physics_process(delta: float):
 	var input_direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	if input_direction != Vector2.ZERO:
-		velocity = velocity.move_toward(input_direction * max_speed, acceleration)
+		velocity = velocity.move_toward(input_direction * max_speed, acceleration * delta)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, deceleration)
+		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
 
 	move_and_slide()
