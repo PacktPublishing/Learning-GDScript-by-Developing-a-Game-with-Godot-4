@@ -4,10 +4,10 @@ extends CharacterBody2D
 const MAX_HEALTH: int = 10
 
 
-@onready var _health_label: Label = $Health
+@onready var _health_label: Label = $HealthLabel
 
 
-@export var health: int = 10:
+@export_range(0, MAX_HEALTH) var health: int = 10:
 	get:
 		return health
 	set(new_value):
@@ -15,8 +15,8 @@ const MAX_HEALTH: int = 10
 		update_health_label()
 
 @export var max_speed: float = 500.0
-@export var acceleration: float = 2500.0
-@export var deceleration: float = 1500.0
+@export var acceleration: float = 45
+@export var deceleration: float = 35
 
 
 func _ready():
@@ -30,7 +30,7 @@ func update_health_label():
 	_health_label.text = str(health) + "/" + str(MAX_HEALTH)
 
 
-func change_health(difference: int):
+func add_health_points(difference: int):
 	health += difference
 
 
@@ -38,8 +38,8 @@ func _physics_process(delta: float):
 	var input_direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	if input_direction != Vector2.ZERO:
-		velocity = velocity.move_toward(input_direction * max_speed, acceleration * delta)
+		velocity = velocity.move_toward(input_direction * max_speed, acceleration)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, deceleration)
 
 	move_and_slide()

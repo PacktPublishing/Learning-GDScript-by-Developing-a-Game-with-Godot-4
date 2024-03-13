@@ -1,7 +1,7 @@
 ; Engine configuration file.
 ; It's best edited using the editor UI and not directly,
 ; since the parameters that go here are not all obvious.
-; 
+;
 ; Format:
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
@@ -56,4 +56,3 @@ move_down={
 2d_physics/layer_1="Collision"
 2d_physics/layer_2="Collectible"
 2d_physics/layer_3="Projectile"
-

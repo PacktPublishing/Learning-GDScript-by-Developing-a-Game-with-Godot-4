@@ -68,7 +68,6 @@ polygon = PackedVector2Array(-207, -229, 589, -296, 1395, -254, 1637, -17, 1655,
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(617, 345)
 script = ExtResource("1_q2icf")
-health = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 scale = Vector2(3, 3)

@@ -26,5 +26,5 @@ func update_health_label():
 	_health_label.text = str(health) + "/" + str(MAX_HEALTH)
 
 
-func change_health(difference: int):
+func add_health_points(difference: int):
 	health += difference
