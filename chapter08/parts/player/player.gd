@@ -4,10 +4,10 @@ extends CharacterBody2D
 const MAX_HEALTH: int = 10
 
 
-@onready var _health_label: Label = $Health
+@onready var _health_label: Label = $HealthLabel
 
 
-@export var health: int = 10:
+@export_range(0, MAX_HEALTH) var health: int = 10:
 	get:
 		return health
 	set(new_value):
@@ -30,7 +30,7 @@ func update_health_label():
 	_health_label.text = str(health) + "/" + str(MAX_HEALTH)
 
 
-func change_health(difference: int):
+func add_health_points(difference: int):
 	health += difference
 
 

@@ -1,7 +1,7 @@
 ; Engine configuration file.
 ; It's best edited using the editor UI and not directly,
 ; since the parameters that go here are not all obvious.
-; 
+;
 ; Format:
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
@@ -51,3 +51,6 @@ move_down={
 ]
 }
 
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.878431, 0.74902, 0.482353, 1)

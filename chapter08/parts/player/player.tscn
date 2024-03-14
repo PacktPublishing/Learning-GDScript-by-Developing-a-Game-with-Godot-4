@@ -11,7 +11,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("2_fygp7")
 
-[node name="Health" type="Label" parent="."]
+[node name="HealthLabel" type="Label" parent="."]
 offset_left = -20.0
 offset_top = -49.0
 offset_right = 23.0
