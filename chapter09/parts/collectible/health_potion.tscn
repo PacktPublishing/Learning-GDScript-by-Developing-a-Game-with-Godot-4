@@ -8,6 +8,5 @@
 script = ExtResource("2_e3e0f")
 
 [node name="Sprite2D" parent="." index="0"]
-texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("3_drnaq")

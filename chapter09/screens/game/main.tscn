@@ -1,55 +1,48 @@
 [gd_scene load_steps=6 format=3 uid="uid://ck2g1dbq0ftuw"]
 
-[ext_resource type="PackedScene" uid="uid://c3npgprfx7dy3" path="res://parts/environment/wall.tscn" id="1_73ib7"]
-[ext_resource type="PackedScene" uid="uid://clviqda8a1cvm" path="res://parts/environment/boulder02.tscn" id="2_csnvk"]
-[ext_resource type="PackedScene" uid="uid://bqbuyddr8dux6" path="res://parts/environment/boulder01.tscn" id="3_g2ffr"]
+[ext_resource type="PackedScene" uid="uid://c3npgprfx7dy3" path="res://parts/arena/wall.tscn" id="1_73ib7"]
+[ext_resource type="PackedScene" uid="uid://clviqda8a1cvm" path="res://parts/arena/boulder02.tscn" id="2_csnvk"]
+[ext_resource type="PackedScene" uid="uid://bqbuyddr8dux6" path="res://parts/arena/boulder01.tscn" id="3_g2ffr"]
 [ext_resource type="PackedScene" uid="uid://d1pysshjlneof" path="res://parts/player/player.tscn" id="4_njsao"]
 [ext_resource type="PackedScene" uid="uid://bce2tgdywe81f" path="res://parts/collectible/health_potion.tscn" id="5_stjyl"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 
-[node name="Environment" type="Node2D" parent="."]
+[node name="Arena" type="Node2D" parent="."]
 
-[node name="Ground" type="ColorRect" parent="Environment"]
-offset_left = -441.0
-offset_top = -371.0
-offset_right = 1691.0
-offset_bottom = 1104.0
-color = Color(0.878431, 0.74902, 0.482353, 1)
+[node name="Wall" parent="Arena" instance=ExtResource("1_73ib7")]
 
-[node name="Wall" parent="Environment" instance=ExtResource("1_73ib7")]
-
-[node name="Wall2" parent="Environment" instance=ExtResource("1_73ib7")]
+[node name="Wall2" parent="Arena" instance=ExtResource("1_73ib7")]
 position = Vector2(1303, 697)
 rotation = -3.14159
 
-[node name="Wall3" parent="Environment" instance=ExtResource("1_73ib7")]
+[node name="Wall3" parent="Arena" instance=ExtResource("1_73ib7")]
 position = Vector2(-29, 692)
 rotation = -3.14159
 scale = Vector2(-1, 1)
 
-[node name="Wall4" parent="Environment" instance=ExtResource("1_73ib7")]
+[node name="Wall4" parent="Arena" instance=ExtResource("1_73ib7")]
 position = Vector2(1281, 5)
 rotation = -3.14159
 scale = Vector2(1, -1)
 
-[node name="Boulder" parent="Environment" instance=ExtResource("2_csnvk")]
+[node name="Boulder" parent="Arena" instance=ExtResource("2_csnvk")]
 position = Vector2(136, 324)
 
-[node name="Boulder2" parent="Environment" instance=ExtResource("3_g2ffr")]
+[node name="Boulder2" parent="Arena" instance=ExtResource("3_g2ffr")]
 position = Vector2(1018, 438)
 
-[node name="Boulder3" parent="Environment" instance=ExtResource("3_g2ffr")]
+[node name="Boulder3" parent="Arena" instance=ExtResource("3_g2ffr")]
 position = Vector2(326, 871)
 
-[node name="Boulder4" parent="Environment" instance=ExtResource("3_g2ffr")]
+[node name="Boulder4" parent="Arena" instance=ExtResource("3_g2ffr")]
 position = Vector2(661, -156)
 
-[node name="Boulder5" parent="Environment" instance=ExtResource("2_csnvk")]
+[node name="Boulder5" parent="Arena" instance=ExtResource("2_csnvk")]
 position = Vector2(973, 902)
 rotation = 1.19687
 
-[node name="OuterWalls" type="Polygon2D" parent="Environment"]
+[node name="OuterWalls" type="Polygon2D" parent="Arena"]
 position = Vector2(0, -1)
 color = Color(0.176471, 0.172549, 0.180392, 1)
 invert_enabled = true
@@ -57,6 +50,7 @@ invert_border = 880.2
 polygon = PackedVector2Array(-207, -229, 589, -296, 1395, -254, 1637, -17, 1655, 701, 1491, 956, 1113, 1072, 178, 1029, -248, 956, -379, 276)
 
 [node name="Player" parent="." instance=ExtResource("4_njsao")]
+position = Vector2(622, 337)
 
 [node name="HealthPotion" parent="." instance=ExtResource("5_stjyl")]
 position = Vector2(-1, 150)
