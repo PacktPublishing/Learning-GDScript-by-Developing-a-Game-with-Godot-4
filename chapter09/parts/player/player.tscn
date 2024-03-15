@@ -28,7 +28,6 @@ horizontal_alignment = 1
 
 [node name="CameraPosition" type="Node2D" parent="."]
 script = ExtResource("3_e53f3")
-position_interpolation_speed = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="CameraPosition"]
 position_smoothing_enabled = true
