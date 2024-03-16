@@ -20,13 +20,14 @@ func _ready():
 
 func _physics_process(delta):
 	_navigation_agent_2d.target_position = target.global_position
-
+	
 	if _navigation_agent_2d.is_navigation_finished():
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
 	else:
 		var next_position: Vector2 = _navigation_agent_2d.get_next_path_position()
 		var direction_to_next_position: Vector2 = global_position.direction_to(next_position)
 		velocity = velocity.move_toward(direction_to_next_position * max_speed, acceleration * delta)
+	
 	move_and_slide()
 
 

@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://parts/projectile/projectile.gd" id="1_m7mvs"]
 [ext_resource type="Texture2D" uid="uid://b53enicokee3b" path="res://assets/sprites/projectiles/arrow01.png" id="2_eqdt7"]
 
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kv6py"]
 radius = 9.0
 height = 32.0

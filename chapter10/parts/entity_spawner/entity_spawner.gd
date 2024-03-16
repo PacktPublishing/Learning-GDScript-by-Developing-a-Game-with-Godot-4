@@ -10,7 +10,7 @@ extends Node2D
 
 
 func _ready():
-	start()
+	start_timer()
 
 
 func spawn_entity():
@@ -25,9 +25,9 @@ func _on_spawn_timer_timeout():
 	spawn_entity()
 
 
-func start():
+func start_timer():
 	_spawn_timer.start(spawn_interval)
 
 
-func stop():
+func stop_timer():
 	_spawn_timer.stop()

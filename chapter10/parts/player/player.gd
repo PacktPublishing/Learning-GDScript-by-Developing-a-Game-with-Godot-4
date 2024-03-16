@@ -10,19 +10,23 @@ signal died
 const MAX_HEALTH: int = 10
 
 
-@onready var _health_label: Label = $Health
+@onready var _health_label: Label = $HealthLabel
+@onready var _shoot_timer = $ShootTimer
 
 
-@export var health: int = 10:
+@export_range(0, MAX_HEALTH) var health: int = 10:
 	get:
 		return health
 	set(new_value):
-		health = clamp(new_value, 0, MAX_HEALTH)
-		update_health_label()
+		var new_health: int = clamp(new_value, 0, MAX_HEALTH)
 
-		if health == 0:
+		if health > 0 and new_health == 0:
 			died.emit()
 			set_physics_process(false)
+			_shoot_timer.stop()
+		
+		health = new_health
+		update_health_label()
 
 @export var max_speed: float = 500.0
 @export var acceleration: float = 2500.0
@@ -41,7 +45,7 @@ func update_health_label():
 	_health_label.text = str(health) + "/" + str(MAX_HEALTH)
 
 
-func change_health(difference: int):
+func add_health_points(difference: int):
 	health += difference
 
 

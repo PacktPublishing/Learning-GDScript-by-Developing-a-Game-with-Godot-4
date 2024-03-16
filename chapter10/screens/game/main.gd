@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 @onready var _game_over_menu: CenterContainer = $CanvasLayer/GameOverMenu
@@ -20,8 +20,8 @@ func _process(delta: float):
 func _on_player_died() -> void:
 	_game_over_menu.show()
 
-	_enemy_spawner.stop()
-	_health_potion_spawner.stop()
+	_enemy_spawner.stop_timer()
+	_health_potion_spawner.stop_timer()
 
 	set_process(false)
 	Highscore.set_new_highscore(_time)
