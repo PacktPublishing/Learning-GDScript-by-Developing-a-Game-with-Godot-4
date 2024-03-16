@@ -53,4 +53,4 @@ polygon = PackedVector2Array(-207, -229, 589, -296, 1395, -254, 1637, -17, 1655,
 position = Vector2(622, 337)
 
 [node name="HealthPotion" parent="." instance=ExtResource("5_stjyl")]
-position = Vector2(-1, 150)
+position = Vector2(702, 366)

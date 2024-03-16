@@ -12,4 +12,4 @@ func _physics_process(delta: float):
 	var movement_direction: Vector2 = _player.velocity.normalized()
 	var target_position: Vector2 = movement_direction * camera_distance
 
-	position = lerp(position, target_position, position_interpolation_speed * delta)
+	position = position.lerp(target_position, position_interpolation_speed * delta)
