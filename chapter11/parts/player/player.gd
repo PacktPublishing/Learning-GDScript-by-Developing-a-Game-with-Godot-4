@@ -10,23 +10,24 @@ const MAX_HEALTH: int = 10
 var pojectile_scene: PackedScene = preload("res://parts/projectile/projectile.tscn")
 
 
-@onready var _health_label: Label = $Health
+@onready var _health_label: Label = $HealthLabel
+@onready var _shoot_timer = $ShootTimer
 @onready var _camera_2d = $CameraPosition/Camera2D
 
 
-@export var health: int = 10:
+@export_range(0, MAX_HEALTH) var health: int = 10:
 	get:
 		return health
 	set(new_value):
-		if is_dead: return
+		var new_health: int = clamp(new_value, 0, MAX_HEALTH)
 
-		health = clamp(new_value, 0, MAX_HEALTH)
-		update_health_label()
-
-		if health == 0:
+		if health > 0 and new_health == 0:
 			died.emit()
 			set_physics_process(false)
-			is_dead = true
+			_shoot_timer.stop()
+		
+		health = new_health
+		update_health_label()
 
 @export var max_speed: float = 500.0
 @export var acceleration: float = 2500.0
@@ -34,11 +35,13 @@ var pojectile_scene: PackedScene = preload("res://parts/projectile/projectile.ts
 @export var shoot_distance: float = 400.0
 
 
-var is_dead: bool = false
-
-
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())
+	
+	if multiplayer.is_server():
+		_shoot_timer.start()
+	else:
+		set_physics_process(false)
 
 
 func _ready():
@@ -54,13 +57,7 @@ func update_health_label():
 	_health_label.text = str(health) + "/" + str(MAX_HEALTH)
 
 
-func change_health(difference: int):
-	health += difference
-
-
 func _physics_process(delta: float):
-	if not is_multiplayer_authority(): return
-
 	var input_direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	if input_direction != Vector2.ZERO:
@@ -69,12 +66,14 @@ func _physics_process(delta: float):
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
 
 	move_and_slide()
+	
+
+func get_hit():
+	health -= 1
 
 
 func _on_shoot_timer_timeout():
-	if not multiplayer.is_server(): return
-
-	if is_dead: return
+	if health == 0: return
 
 	var closest_enemy: Enemy
 	var smallest_distance: float = INF

@@ -11,12 +11,10 @@ height = 48.0
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_f4wmn"]
 properties/0/path = NodePath(".:health")
 properties/0/spawn = true
-properties/0/sync = true
-properties/0/watch = false
+properties/0/replication_mode = 1
 properties/1/path = NodePath(".:position")
 properties/1/spawn = true
-properties/1/sync = true
-properties/1/watch = false
+properties/1/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
@@ -27,7 +25,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("2_fygp7")
 
-[node name="Health" type="Label" parent="."]
+[node name="HealthLabel" type="Label" parent="."]
 offset_left = -20.0
 offset_top = -49.0
 offset_right = 23.0
@@ -53,7 +51,6 @@ editor_draw_drag_margin = true
 shape = SubResource("CapsuleShape2D_p5xo7")
 
 [node name="ShootTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_f4wmn")

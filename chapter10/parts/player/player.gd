@@ -60,6 +60,10 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 
+func get_hit():
+	health -= 1
+
+
 func _on_shoot_timer_timeout():
 	if health == 0: return
 

@@ -13,6 +13,10 @@ var target: Node2D
 
 
 func _ready():
+	if not multiplayer.is_server():
+		set_physics_process(false)
+		return
+
 	var player_nodes: Array = get_tree().get_nodes_in_group("player")
 	if not player_nodes.is_empty():
 		target = player_nodes.pick_random()
@@ -34,6 +38,10 @@ func _on_player_detection_area_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
 
-	body.health -= 1
 	if not multiplayer.is_server(): return
+	body.get_hit()
+	queue_free()
+
+
+func get_hit():
 	queue_free()

@@ -18,5 +18,5 @@ func _process(delta):
 
 
 func _on_enemy_detection_area_body_entered(body: Node2D) -> void:
-	body.queue_free()
+	body.get_hit()
 	queue_free()

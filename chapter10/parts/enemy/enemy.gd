@@ -35,5 +35,9 @@ func _on_player_detection_area_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
 
-	body.health -= 1
+	body.get_hit()
+	get_hit()
+
+
+func get_hit():
 	queue_free()

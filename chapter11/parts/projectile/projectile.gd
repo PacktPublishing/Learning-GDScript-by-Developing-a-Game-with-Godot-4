@@ -8,9 +8,11 @@ extends Node2D
 var target: Node2D
 
 
-func _process(delta):
-	if not multiplayer.is_server(): return
+func _ready():
+	set_physics_process(multiplayer.is_server())
 
+
+func _process(delta):
 	if not is_instance_valid(target):
 		queue_free()
 		return
@@ -22,5 +24,5 @@ func _process(delta):
 func _on_enemy_detection_area_body_entered(body: Node2D) -> void:
 	if not multiplayer.is_server(): return
 
-	body.queue_free()
+	body.get_hit()
 	queue_free()

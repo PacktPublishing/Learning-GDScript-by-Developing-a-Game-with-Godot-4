@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 @onready var _game_over_menu: CenterContainer = $CanvasLayer/GameOverMenu

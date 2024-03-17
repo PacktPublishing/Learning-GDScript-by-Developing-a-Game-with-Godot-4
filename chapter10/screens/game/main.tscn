@@ -16,6 +16,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(-200, -223, 593, -298, 1396, -258, 1637, -20, 1652, 690, 1488, 953, 1112, 1064, 177, 1026, -249, 948, -384, 280)])
 parsed_geometry_type = 1
 source_geometry_mode = 1
+source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 40.0
 
 [node name="Main" type="Node"]
@@ -68,7 +69,6 @@ navigation_polygon = SubResource("NavigationPolygon_hhrbv")
 position = Vector2(625, 304)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_m5tam")]
-visible = false
 entity_scene = ExtResource("7_fdnlt")
 
 [node name="Marker2D" type="Marker2D" parent="EnemySpawner/Positions" index="0"]
@@ -108,9 +108,10 @@ position = Vector2(164, -163)
 position = Vector2(635, -4)
 
 [node name="HealthPotionSpawner" parent="." instance=ExtResource("6_m5tam")]
-visible = false
 entity_scene = ExtResource("5_stjyl")
-spawn_interval = 20.0
+start_interval = 20.0
+end_interval = 20.0
+time_delta = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="HealthPotionSpawner/Positions" index="0"]
 position = Vector2(622, 360)
