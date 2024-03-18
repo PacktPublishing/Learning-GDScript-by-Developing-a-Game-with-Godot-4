@@ -20,6 +20,10 @@ config/icon="res://icon.png"
 
 Highscore="*res://autoloads/highscore.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_left={
