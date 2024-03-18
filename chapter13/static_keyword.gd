@@ -1,7 +1,7 @@
 extends Node2D
 
 
-class BaseArrow:
+class Enemy:
 	static var damage: float = 10.0
 	
 	static func describe_damage():
@@ -9,5 +9,5 @@ class BaseArrow:
 
 
 func _ready():
-	BaseArrow.describe_damage()
-	print(BaseArrow.damage)
+	print(Enemy.damage)
+	Enemy.describe_damage()
