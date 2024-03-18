@@ -6,6 +6,7 @@ extends Node
 @onready var _health_potion_spawner: Node2D = $HealthPotionSpawner
 @onready var _time_label: Label = $CanvasLayer/TimerUI/TimeLabel
 @onready var _ip_label = $CanvasLayer/NetworkUI/IPLabel
+@onready var _player_multiplayer_spawner: MultiplayerSpawner = $PlayerMultiplayerSpawner
 
 
 @export var player_scene: PackedScene
@@ -18,11 +19,18 @@ var _time: float = 0.0:
 
 
 func _ready():
+	_player_multiplayer_spawner.spawn_function = spawn_player
+
 	if multiplayer.is_server():
 		show_local_ip_address()
 
 		multiplayer.peer_connected.connect(add_player)
 		add_player(1)
+		
+		for peer in multiplayer.get_peers():
+			add_player(peer)
+	else:
+		set_process(false)
 
 
 func show_local_ip_address():
@@ -35,16 +43,19 @@ func show_local_ip_address():
 
 
 func _process(delta: float):
-	if multiplayer.is_server():
-		_time += delta
+	_time += delta
 
 
 func add_player(id: int):
-	var player: Player = player_scene.instantiate()
-	player.name = str(id)
-	add_child(player)
+	_player_multiplayer_spawner.spawn(id)
 
+
+func spawn_player(id: int):
+	var player: Player = player_scene.instantiate()
+	player.multiplayer_id = id
 	player.died.connect(_on_player_died)
+	
+	return player
 
 
 func _on_player_died() -> void:
@@ -55,8 +66,8 @@ func _on_player_died() -> void:
 func end_game():
 	_game_over_menu.show()
 
-	_enemy_spawner.stop()
-	_health_potion_spawner.stop()
+	_enemy_spawner.stop_timer()
+	_health_potion_spawner.stop_timer()
 
 	set_process(false)
 	Highscore.set_new_highscore(_time)

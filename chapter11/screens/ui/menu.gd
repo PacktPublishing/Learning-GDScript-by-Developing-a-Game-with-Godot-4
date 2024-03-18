@@ -32,7 +32,10 @@ func host_game():
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(PORT)
 	if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
+		print("Server Failed")
 		return
+	
+	print("Server Created")
 	multiplayer.multiplayer_peer = peer
 
 
@@ -40,5 +43,8 @@ func connect_to_game(ip_address: String):
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(ip_address, PORT)
 	if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
+		print("Client Failed")
 		return
+	
+	print("Client Created")
 	multiplayer.multiplayer_peer = peer

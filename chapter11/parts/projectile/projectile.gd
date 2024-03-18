@@ -5,14 +5,19 @@ extends Node2D
 @export var speed: float = 600.0
 
 
+@onready var _enemy_detection_area: Area2D = $EnemyDetectionArea
+
+
 var target: Node2D
 
 
 func _ready():
-	set_physics_process(multiplayer.is_server())
+	if not multiplayer.is_server():
+		set_physics_process(false)
+		_enemy_detection_area.monitoring = false
 
 
-func _process(delta):
+func _physics_process(delta: float):
 	if not is_instance_valid(target):
 		queue_free()
 		return
@@ -22,7 +27,5 @@ func _process(delta):
 
 
 func _on_enemy_detection_area_body_entered(body: Node2D) -> void:
-	if not multiplayer.is_server(): return
-
 	body.get_hit()
 	queue_free()

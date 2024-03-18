@@ -6,5 +6,5 @@ extends Node2D
 @export var position_interpolation_speed: float = 55.0
 
 
-func _process(_delta):
+func _physics_process(_delta):
 	position = lerp(position, get_parent().velocity.normalized() * camera_distance, position_interpolation_speed * _delta)

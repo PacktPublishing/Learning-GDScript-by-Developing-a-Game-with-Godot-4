@@ -12,7 +12,9 @@ extends Node2D
 
 func _ready():
 	_multiplayer_spawner.add_spawnable_scene(entity_scene.resource_path)
-	start()
+	
+	if multiplayer.is_server():
+		start_timer()
 
 
 func spawn_entity():
@@ -27,10 +29,9 @@ func _on_spawn_timer_timeout():
 	spawn_entity()
 
 
-func start():
-	if not multiplayer.is_server(): return
+func start_timer():
 	_spawn_timer.start(spawn_interval)
 
 
-func stop():
+func stop_timer():
 	_spawn_timer.stop()

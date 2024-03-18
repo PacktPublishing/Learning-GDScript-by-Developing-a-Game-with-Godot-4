@@ -7,12 +7,12 @@ signal died
 const MAX_HEALTH: int = 10
 
 
-var pojectile_scene: PackedScene = preload("res://parts/projectile/projectile.tscn")
+@export var pojectile_scene: PackedScene = preload("res://parts/projectile/projectile.tscn")
 
 
 @onready var _health_label: Label = $HealthLabel
 @onready var _shoot_timer = $ShootTimer
-@onready var _camera_2d = $CameraPosition/Camera2D
+@onready var _camera_position: Node2D = $CameraPosition
 
 
 @export_range(0, MAX_HEALTH) var health: int = 10:
@@ -35,19 +35,23 @@ var pojectile_scene: PackedScene = preload("res://parts/projectile/projectile.ts
 @export var shoot_distance: float = 400.0
 
 
-func _enter_tree():
-	set_multiplayer_authority(name.to_int())
-	
-	if multiplayer.is_server():
-		_shoot_timer.start()
-	else:
-		set_physics_process(false)
+var multiplayer_id: int
+
+
+func _enter_tree() -> void:
+	set_multiplayer_authority(multiplayer_id)
+	$HealthMultiplayerSynchronizer.set_multiplayer_authority(1)
 
 
 func _ready():
 	update_health_label()
 
-	_camera_2d.enabled = is_multiplayer_authority()
+	if not multiplayer.is_server():
+		_shoot_timer.stop()
+
+	if not is_multiplayer_authority():
+		_camera_position.queue_free()
+		set_physics_process(false)
 
 
 func update_health_label():
@@ -66,15 +70,13 @@ func _physics_process(delta: float):
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
 
 	move_and_slide()
-	
+
 
 func get_hit():
 	health -= 1
 
 
 func _on_shoot_timer_timeout():
-	if health == 0: return
-
 	var closest_enemy: Enemy
 	var smallest_distance: float = INF
 
