@@ -19,7 +19,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SaveManager="*res://autoloads/save_manager.gd"
-Highscore="*res://autoloads/highscore.gd"
+HighscoreManager="*res://autoloads/highscore_manager.gd"
 
 [display]
 

@@ -24,4 +24,4 @@ func _on_player_died() -> void:
 	_health_potion_spawner.stop_timer()
 
 	set_process(false)
-	Highscore.set_new_highscore(_time)
+	HighscoreManager.set_new_highscore(_time)

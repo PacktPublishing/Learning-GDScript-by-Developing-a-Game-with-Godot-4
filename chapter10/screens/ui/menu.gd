@@ -5,7 +5,7 @@ extends Control
 
 
 func _ready():
-	_highscore_label.text = "Highscore: " + str(Highscore.highscore)
+	_highscore_label.text = "Highscore: " + str(HighscoreManager.highscore)
 
 
 func _on_play_button_pressed():

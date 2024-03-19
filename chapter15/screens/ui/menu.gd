@@ -9,7 +9,7 @@ const PORT: int = 7890
 
 
 func _ready():
-	_highscore_label.text = "Highscore: " + str(Highscore.highscore)
+	_highscore_label.text = "Highscore: " + str(HighscoreManager.highscore)
 
 	if multiplayer.has_multiplayer_peer():
 		multiplayer.multiplayer_peer.close()

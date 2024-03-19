@@ -59,4 +59,4 @@ func end_game():
 	_health_potion_spawner.stop()
 
 	set_process(false)
-	Highscore.set_new_highscore(_time)
+	HighscoreManager.set_new_highscore(_time)
