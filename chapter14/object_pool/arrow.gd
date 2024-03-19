@@ -12,10 +12,6 @@ var direction: Vector2
 var flown_distance: float
 
 
-func _ready():
-	kill()
-
-
 func _process(delta):
 	position += direction * SPEED * delta
 	
@@ -31,8 +27,3 @@ func set_alive():
 	direction = Vector2.RIGHT.rotated(randf_range(0.0, TAU))
 	rotation = direction.angle()
 	flown_distance = 0.0
-
-
-func kill():
-	set_process(false)
-	hide()

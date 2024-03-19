@@ -10,6 +10,5 @@ position = Vector2(573, 307)
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.01
-autostart = true
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

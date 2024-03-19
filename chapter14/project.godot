@@ -19,3 +19,7 @@ config/icon="res://icon.png"
 
 EventBus="*res://event_bus/event_bus.gd"
 AchivementSystem="*res://event_bus/achivement_system.gd"
+
+[debug]
+
+settings/stdout/verbose_stdout=true
