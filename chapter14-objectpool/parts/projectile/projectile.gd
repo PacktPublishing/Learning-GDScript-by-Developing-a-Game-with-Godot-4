@@ -20,7 +20,7 @@ func _ready():
 
 func _physics_process(delta: float):
 	if not is_instance_valid(target):
-		set_dead()
+		died.emit()
 		return
 
 	global_position = global_position.move_toward(target.global_position, speed * delta)
@@ -35,8 +35,6 @@ func set_alive():
 
 
 func set_dead():
-	if multiplayer.is_server():
-		died.emit()
 	set_physics_process(false)
 	_enemy_detection_area.set_deferred("monitoring", false)
 	hide()
@@ -44,4 +42,4 @@ func set_dead():
 
 func _on_enemy_detection_area_body_entered(body: Node2D) -> void:
 	body.get_hit()
-	set_dead()
+	died.emit()

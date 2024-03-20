@@ -94,8 +94,7 @@ func _on_shoot_timer_timeout():
 	if smallest_distance > shoot_distance:
 		return
 
-	#var new_projectile: Projectile = pojectile_scene.instantiate()
-	var new_projectile: Projectile = get_parent()._projectile_pool.get_dead_node()
-	new_projectile.target = closest_enemy
-	new_projectile.position = global_position
-	#get_parent().add_child(new_projectile, true)
+	var new_projectile: Projectile = get_parent().projectile_pool.get_dead_node()
+	if new_projectile:
+		new_projectile.target = closest_enemy
+		new_projectile.position = global_position

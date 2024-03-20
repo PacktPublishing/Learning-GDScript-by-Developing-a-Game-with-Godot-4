@@ -12,7 +12,8 @@ extends Node
 @export var player_scene: PackedScene
 
 
-var _projectile_pool: ObjectPool
+var projectile_pool: ObjectPool
+var projectile_scene: PackedScene = preload("res://parts/projectile/projectile.tscn")
 
 
 var _time: float = 0.0:
@@ -33,7 +34,7 @@ func _ready():
 		for peer in multiplayer.get_peers():
 			add_player(peer)
 		
-		_projectile_pool = ObjectPool.new(load("res://parts/projectile/projectile.tscn"), 100, self)
+		projectile_pool = ObjectPool.new(projectile_scene, 50, self)
 	else:
 		set_process(false)
 
@@ -79,5 +80,6 @@ func end_game():
 	
 	
 func _exit_tree():
-	_projectile_pool.free_nodes()
-	_projectile_pool.free()
+	if projectile_pool:
+		projectile_pool.free_nodes()
+		projectile_pool.free()

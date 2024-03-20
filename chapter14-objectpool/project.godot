@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Chapter 14 Object-Pool"
+config/name="Chapter 14 Multiplayer Object-Pool"
 config/description="Enter an interesting project description here!"
 run/main_scene="res://screens/ui/menu.tscn"
 config/features=PackedStringArray("4.2")

@@ -15,6 +15,7 @@ func _init(scene: PackedScene, pool_size: int, root_node: Node):
 
 
 func kill_node(node: Node):
+	node.set_dead()
 	_pool.append(node)
 
 
