@@ -169,5 +169,19 @@ spawn_path = NodePath("..")
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_mxd5r")
 
+[node name="PlayerStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="PlayerStartPositions"]
+position = Vector2(-120, -46)
+
+[node name="Marker2D2" type="Marker2D" parent="PlayerStartPositions"]
+position = Vector2(-164, 680)
+
+[node name="Marker2D3" type="Marker2D" parent="PlayerStartPositions"]
+position = Vector2(1400, 708)
+
+[node name="Marker2D4" type="Marker2D" parent="PlayerStartPositions"]
+position = Vector2(1354, 2)
+
 [editable path="EnemySpawner"]
 [editable path="HealthPotionSpawner"]

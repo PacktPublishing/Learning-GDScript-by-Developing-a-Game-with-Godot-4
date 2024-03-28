@@ -7,9 +7,12 @@ extends Node
 @onready var _time_label: Label = $CanvasLayer/TimerUI/TimeLabel
 @onready var _ip_label = $CanvasLayer/NetworkUI/IPLabel
 @onready var _player_multiplayer_spawner: MultiplayerSpawner = $PlayerMultiplayerSpawner
+@onready var _player_start_positions: Node2D = $PlayerStartPositions
 
 
 @export var player_scene: PackedScene
+
+var _player_spawn_index: int = 0
 
 
 var _time: float = 0.0:
@@ -54,6 +57,10 @@ func spawn_player(id: int):
 	var player: Player = player_scene.instantiate()
 	player.multiplayer_id = id
 	player.died.connect(_on_player_died)
+	
+	var spawn_marker: Marker2D = _player_start_positions.get_child(_player_spawn_index)
+	player.position = spawn_marker.position
+	_player_spawn_index = (_player_spawn_index + 1) % _player_start_positions.get_child_count()
 	
 	return player
 
