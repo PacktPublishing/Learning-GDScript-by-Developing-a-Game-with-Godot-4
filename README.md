@@ -1,5 +1,61 @@
 # Learning GDScript by Developing a Game with Godot 4
 
-A book on learning how to code in GDScript 2.0 while making a game in Godot 4, the open-source game engine.
+<a href="https://www.packtpub.com/product/learning-gdscript-by-developing-a-game-with-godot-4/9781804616987"><img src="https://content.packt.com/B19358/cover_image_small.jpg" alt="" height="256px" align="right"></a>
 
-In this repository you will find the example code for each chapter.
+This is the code repository for [Learning GDScript by Developing a Game with Godot 4](https://www.packtpub.com/product/learning-gdscript-by-developing-a-game-with-godot-4/9781804616987), published by Packt.
+
+**A fun introduction to programming in GDScript 2.0 and game development using the Godot engine**
+
+## What is this book about?
+In the digital landscape driven by interactive experiences, the demand for creative individuals with the skills to create captivating games has never been higher. Written by Sander Vanhove, a seasoned game developer with over 20 games to his credit, this book will serve as your entry point into game development, showing you how to leverage the powerful features of the open-source, versatile GDScript 2.0 to develop your ideas, from simple platformers to complex RPGs.
+	
+This book covers the following exciting features:
+* Develop your GDScript 2.0 programming skills from basic to advanced, emphasizing code cleanliness
+* Harness Godot 4's integrated physics engine to control and manipulate in-game objects
+* Design a vibrant and immersive game world by seamlessly integrating a diverse array of assets
+* Master the art of processing input from various sources for enhanced interactivity
+* Extend the reach of your game by learning how to export it to multiple platforms
+* Implement basic AI systems and incorporate simple multiplayer functionality for a dynamic gaming experience
+
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1804616982) today! 
+
+<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
+alt="https://www.packtpub.com/" border="5" /></a>
+
+
+## Instructions and Navigations
+All of the code is organized into folders. For example, Chapter03.
+
+The code will look like the following:
+```
+func _ready():
+  var inventory = [
+    "Boots",
+    "Bananas",
+    "Bees"
+  ]
+  print(inventory[100])
+```
+
+**Following is what you need for this book:**
+
+This book is for programmers, game designers, game developers, and game artists who want to start creating games in Godot 4. If you’re new to coding or game development, looking for a new creative outlet, and want to give Godot 4 and GDScript 2.0 a try, this book is for you. While no prior knowledge of programming or Godot is required, this book gradually introduces more complex concepts as you advance through the chapters.
+
+With the following software and hardware list you can run all code files present in the book (Chapter 1-16).
+
+### Software and Hardware List
+
+| Chapter  | Software required    | OS required                      |
+| -------- | ---------------------| ---------------------------------|
+| 1-16     | Godot 4.2.1          | Windows, macOS, or Linux         |
+| 1-16     | GDScript 2.0         | Windows, macOS, or Linux         |
+
+
+### Related products <Other books you may enjoy>
+* The Essential Guide to Creating Multiplayer Games with Godot 4.0 [[Packt]](https://www.packtpub.com/product/the-essential-guide-to-creating-multiplayer-games-with-godot-40/9781803232614) [[Amazon]](https://www.amazon.in/dp/1803232617)
+
+* Godot 4 Game Development Projects [[Packt]](https://www.packtpub.com/product/godot-4-game-development-projects-second-edition/9781804610404) [[Amazon]](https://www.amazon.in/dp/1804610402)
+
+## Get to Know the Author
+**Sander Vanhove** 
+has been creating games with the Godot Game Engine for over five years, releasing over 20 games on multiple platforms. However, his interest in games started long before that, taking him from engine to engine before finally settling. This enthusiasm, along with his master's in computer science, gave him a broad knowledge of programming and AI, which he now applies in his day job as a lead game developer and technical artist of a studio that uses the Godot Engine. You can always find him working on that next project, learning new game development techniques, or trying to teach people how to use Godot.
