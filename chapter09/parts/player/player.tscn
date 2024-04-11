@@ -30,7 +30,6 @@ horizontal_alignment = 1
 script = ExtResource("3_e53f3")
 
 [node name="Camera2D" type="Camera2D" parent="CameraPosition"]
-position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
