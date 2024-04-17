@@ -52,9 +52,9 @@ With the following software and hardware list you can run all code files present
 
 
 ### Related products <Other books you may enjoy>
-* The Essential Guide to Creating Multiplayer Games with Godot 4.0 [[Packt]](https://www.packtpub.com/product/the-essential-guide-to-creating-multiplayer-games-with-godot-40/9781803232614) [[Amazon]](https://www.amazon.in/dp/1803232617)
+* The Essential Guide to Creating Multiplayer Games with Godot 4.0 [[Packt]](https://www.packtpub.com/product/the-essential-guide-to-creating-multiplayer-games-with-godot-40/9781803232614) [[Amazon]](https://www.amazon.com/dp/1803232617)
 
-* Godot 4 Game Development Projects [[Packt]](https://www.packtpub.com/product/godot-4-game-development-projects-second-edition/9781804610404) [[Amazon]](https://www.amazon.in/dp/1804610402)
+* Godot 4 Game Development Projects [[Packt]](https://www.packtpub.com/product/godot-4-game-development-projects-second-edition/9781804610404) [[Amazon]](https://www.amazon.com/dp/1804610402)
 
 ## Get to Know the Author
 **Sander Vanhove** 
