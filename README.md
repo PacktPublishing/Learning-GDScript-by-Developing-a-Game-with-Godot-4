@@ -58,6 +58,8 @@ With the following software and hardware list you can run all code files present
 
 ## Errata 
 * Page 33, Figure 2.6: Line 10 reads `number_of_lives -= number_of_lives` _should read_ `number_of_lives -= fire_ball_damage`
+* Page 52, Last code snippet _should be_ `print("You live" if number_of_lives > 0 else "You died!")` _instead of_ `Print("You live" if number_of_lives > 0`
+
 
 ## Get to Know the Author
 **Sander Vanhove** 
