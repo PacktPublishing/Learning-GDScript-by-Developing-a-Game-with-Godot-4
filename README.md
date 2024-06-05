@@ -56,6 +56,9 @@ With the following software and hardware list you can run all code files present
 
 * Godot 4 Game Development Projects [[Packt]](https://www.packtpub.com/product/godot-4-game-development-projects-second-edition/9781804610404) [[Amazon]](https://www.amazon.com/dp/1804610402)
 
+## Errata 
+* Page 33, Figure 2.6: Line 10 reads `number_of_lives -= number_of_lives` _should read_ `number_of_lives -= fire_ball_damage`
+
 ## Get to Know the Author
 **Sander Vanhove** 
 has been creating games with the Godot Game Engine for over five years, releasing over 20 games on multiple platforms. However, his interest in games started long before that, taking him from engine to engine before finally settling. This enthusiasm, along with his master's in computer science, gave him a broad knowledge of programming and AI, which he now applies in his day job as a lead game developer and technical artist of a studio that uses the Godot Engine. You can always find him working on that next project, learning new game development techniques, or trying to teach people how to use Godot.
