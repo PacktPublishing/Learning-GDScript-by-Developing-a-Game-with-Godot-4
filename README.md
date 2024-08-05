@@ -57,12 +57,14 @@ With the following software and hardware list you can run all code files present
 * Godot 4 Game Development Projects [[Packt]](https://www.packtpub.com/product/godot-4-game-development-projects-second-edition/9781804610404) [[Amazon]](https://www.amazon.com/dp/1804610402)
 
 ## Errata 
+* Page 33, "We have assigned new **valuesv** to variables using the assignment operator (=)"  _it should be_  "We have assigned new **values** to variables using the assignment operator (=)"
 * Page 33, Figure 2.6: Line 11 reads `number_of_lives -= number_of_lives` _should read_ `number_of_lives -= fire_ball_damage`
 * Page 36, This snippet of code should print out the following:
   ``` The number of lives is 3. ```
   _should be_
   ```The number of lives is 1 ```
 * Page 52, Last code snippet _should be_ `print("You live" if number_of_lives > 0 else "You died!")` _instead of_ `Print("You live" if number_of_lives > 0`
+* Page 62, "Here, we remove the first element of the inventory array as long, so the array has a length of more than three elements." _it should be_ "Here, we remove the first element of the inventory array as long as the length is more than three elements."
 * Page 64, Line 2 of the code snippet: `For item in inventory.size():` _should read_ `For item in inventory:`
 
 
