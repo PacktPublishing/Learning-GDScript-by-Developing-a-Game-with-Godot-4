@@ -66,6 +66,7 @@ With the following software and hardware list you can run all code files present
 * Page 52, Last code snippet _should be_ `print("You live" if number_of_lives > 0 else "You died!")` _instead of_ `Print("You live" if number_of_lives > 0`
 * Page 62, "Here, we remove the first element of the inventory array as long, so the array has a length of more than three elements." _it should be_ "Here, we remove the first element of the inventory array as long as the length is more than three elements."
 * Page 64, Line 2 of the code snippet: `For item in inventory.size():` _should read_ `For item in inventory:`
+* Page 95, The `_ready` functions of the `BuffEnemy` and `StrongEnemy` classes should be `_init` functions.
 * Page 136, Under section **Different types of exported variables** "including the outer values of 0 and 20." _should be_ "including the outer values of 0 and 10."
 * Page 136, Last code snippet _should be_ `@export_range(0, 10) var health: int = 10` _instead of_ `@export_range(0, 10) health: int = 10` 
 * Page 194, "Save the script as collectible.gb" _should be_ "Save the script as collectible.gd"
