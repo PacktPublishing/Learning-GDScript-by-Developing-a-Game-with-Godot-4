@@ -72,6 +72,7 @@ With the following software and hardware list you can run all code files present
 * Page 136, Last code snippet _should be_ `@export_range(0, 10) var health: int = 10` _instead of_ `@export_range(0, 10) health: int = 10`
 * Page 193, The path to the sprite should be `assets/sprites/collectibles` instead of `assets/visual/collectibles`.
 * Page 194, "Save the script as collectible.gb" _should be_ "Save the script as collectible.gd"
+* Page 233 & 243, `_enemy_spawner.stop() _health_potion_spawner.stop()` should be `_enemy_spawner.stop_timer() _health_potion_spawner.stop_timer()`.
 * Page 259, The function call for `get_childr` should be `get_child`.
 
 
