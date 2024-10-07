@@ -57,6 +57,7 @@ With the following software and hardware list you can run all code files present
 * Godot 4 Game Development Projects [[Packt]](https://www.packtpub.com/product/godot-4-game-development-projects-second-edition/9781804610404) [[Amazon]](https://www.amazon.com/dp/1804610402)
 
 ## Errata 
+* Page 32, Multiplication does not have precedence over division or modulo, just like addition does not have precedence over subtraction.
 * Page 33, "We have assigned new **valuesv** to variables using the assignment operator (=)"  _it should be_  "We have assigned new **values** to variables using the assignment operator (=)"
 * Page 33, Figure 2.6: Line 11 reads `number_of_lives -= number_of_lives` _should read_ `number_of_lives -= fire_ball_damage`
 * Page 36, This snippet of code should print out the following:
@@ -68,7 +69,8 @@ With the following software and hardware list you can run all code files present
 * Page 64, Line 2 of the code snippet: `For item in inventory.size():` _should read_ `For item in inventory:`
 * Page 95, The `_ready` functions of the `BuffEnemy` and `StrongEnemy` classes should be `_init` functions.
 * Page 136, Under section **Different types of exported variables** "including the outer values of 0 and 20." _should be_ "including the outer values of 0 and 10."
-* Page 136, Last code snippet _should be_ `@export_range(0, 10) var health: int = 10` _instead of_ `@export_range(0, 10) health: int = 10` 
+* Page 136, Last code snippet _should be_ `@export_range(0, 10) var health: int = 10` _instead of_ `@export_range(0, 10) health: int = 10`
+* Page 193, The path to the sprite should be `assets/sprites/collectibles` instead of `assets/visual/collectibles`.
 * Page 194, "Save the script as collectible.gb" _should be_ "Save the script as collectible.gd"
 
 
