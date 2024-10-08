@@ -75,6 +75,7 @@ With the following software and hardware list you can run all code files present
 * Page 220, The function `hit()` should be called `get_hit()`.
 * Page 233 & 243, `_enemy_spawner.stop() _health_potion_spawner.stop()` should be `_enemy_spawner.stop_timer() _health_potion_spawner.stop_timer()`.
 * Page 259, The function call for `get_childr` should be `get_child`.
+* Chapter 8, There is confusing use between the name `Arena` and `Environment` for the node that contains all the objects of the terrain. It should be `Environment` in both the screenshots, explanation and folder structure.
 
 
 ## Get to Know the Author
