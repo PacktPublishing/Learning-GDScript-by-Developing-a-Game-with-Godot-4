@@ -72,6 +72,10 @@ With the following software and hardware list you can run all code files present
 * Page 136, Last code snippet _should be_ `@export_range(0, 10) var health: int = 10` _instead of_ `@export_range(0, 10) health: int = 10`
 * Page 193, The path to the sprite should be `assets/sprites/collectibles` instead of `assets/visual/collectibles`.
 * Page 194, "Save the script as collectible.gb" _should be_ "Save the script as collectible.gd".
+* Page 209, point number 6, it should be "the first VBoxContainer node" _instead of_ "the first VBocContainer node"
+* Page 210, "In the function that is connected to the Exit button, we call the quit() function, which simply **shits**
+down the runtime." _should be_ "In the function that is connected to the Exit button, we call the quit() function, which simply **shuts**
+down the runtime."
 * Page 220, The function `hit()` should be called `get_hit()`.
 * Page 233 & 243, `_enemy_spawner.stop() _health_potion_spawner.stop()` should be `_enemy_spawner.stop_timer() _health_potion_spawner.stop_timer()`.
 * Page 259, The function call for `get_childr` should be `get_child`.
